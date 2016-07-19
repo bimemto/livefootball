@@ -9,21 +9,21 @@ function watch(details_url) {
 				if(val === ''){
 					alert('Hiện tại chưa có link, mời bạn quay lại sau');
 				} else {
-					var win = window.open('http://bu.1ly.co', '_newtab');
-					do_the_ajax_call(win, val);
+					var win = window.open('','_blank');
+					win.location = val;
 				}
 			});
 		});
 }
 
 function do_the_ajax_call(myPopup, theNewURL){
-     $.ajax({
-          url: "http://bu.1ly.co",
-          type: "POST",
-          success: function(data){
-               myPopup.location = theNewURL;
-          }
-     });
+	$.ajax({
+		url: "http://bu.1ly.co",
+		type: "POST",
+		success: function(data){
+			myPopup.location = theNewURL;
+		}
+	});
 }
 
 function is_mobile(req) {
