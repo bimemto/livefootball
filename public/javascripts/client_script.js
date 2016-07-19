@@ -9,7 +9,7 @@ function watch(details_url) {
 				if(val === ''){
 					alert('Hiện tại chưa có link, mời bạn quay lại sau');
 				} else {
-					var win = window.open('http://bu.1ly.co', '', '');
+					var win = window.open('http://bu.1ly.co', '_newtab');
 					do_the_ajax_call(win, val);
 				}
 			});
