@@ -2,6 +2,12 @@ extends layout
 
 block content
 	h1 Today matches
+	table
+    thead
+    	tr
+    	th Home
+    	th Info
+    	th Away
 	-var ob = JSON.parse(json)
 	ol
 		-for(var prop in ob)
