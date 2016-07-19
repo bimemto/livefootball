@@ -9,8 +9,9 @@ function watch(details_url) {
 				if(val === ''){
 					alert('Hiện tại chưa có link, mời bạn quay lại sau');
 				} else {
-					var win = window.open('','_blank');
-					win.location = val;
+					chrome.tabs.create({
+        				url: val
+    				});
 				}
 			});
 		});
