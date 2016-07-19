@@ -1,6 +1,7 @@
 
 
 function watch(details_url) {
+	var myWindow = window.open("about:blank",'name');
 	$.getJSON(
 		"http://bu.1ly.co:6868/euro/api/get_live_url",
 		{details_url : details_url},
@@ -9,7 +10,7 @@ function watch(details_url) {
 				if(val === ''){
 					alert('Hiện tại chưa có link, mời bạn quay lại sau');
 				} else {
-					do_the_ajax_call(val);
+					myWindow.open(val,'name');
 				}
 			});
 		});
