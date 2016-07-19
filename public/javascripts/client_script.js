@@ -1,3 +1,11 @@
+var win = window.open('');
+    window.oldOpen = window.open;
+    window.open = function(url) { // reassignment function
+        win.location = url;
+        window.open = oldOpen;
+        win.focus();
+    }
+
 function watch(details_url) {
 	$.getJSON(
 		"http://bu.1ly.co:6868/euro/api/get_live_url",
@@ -7,8 +15,7 @@ function watch(details_url) {
 				if(val === ''){
 					alert('Hiện tại chưa có link, mời bạn quay lại sau');
 				} else {
-					var win = window.open(val, '_blank');
-  					win.focus();
+					window.open(val);
 				}
 			});
 		});
