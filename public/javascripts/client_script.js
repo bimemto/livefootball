@@ -16,5 +16,5 @@ function watch(details_url) {
 	// 	} else {
 	// 		alert(body);
 	// 	}
-	// });
+});
 }
