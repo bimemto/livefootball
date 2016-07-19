@@ -4,7 +4,8 @@ function watch(details_url) {
 		{details_url : details_url},
 		function(data) {
 			$.each(data, function( key, val ) {
-				alert(key + ":" + val);
+				var url = 'http://stackoverflow.com/questions/503093/how-can-i-make-a-page-redirect-using-jquery';
+				window.location.replace(url);
 			});
 		});
 }
