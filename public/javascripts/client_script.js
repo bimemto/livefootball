@@ -4,8 +4,11 @@ function watch(details_url) {
 		{details_url : details_url},
 		function(data) {
 			$.each(data, function( key, val ) {
-				var url = 'http://stackoverflow.com/questions/503093/how-can-i-make-a-page-redirect-using-jquery';
-				window.location.replace(url);
+				if(val === ''){
+					alert('Hiện tại chưa có link, mời bạn quay lại sau');
+				} else {
+					window.location.replace(val);
+				}
 			});
 		});
 }
