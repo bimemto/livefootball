@@ -5,10 +5,11 @@ function watch(details_url) {
 		"http://bu.1ly.co:6868/euro/api/get_live_url",
 		{details_url : details_url},
 		function(data) {
-			var url = data.live_url;
-			alert(url);
+			$.each( data, function( key, val ) {
+				alert(key + ":" val);
+			});
 		}
-	);
+		);
 	// request.get('http://bu.1ly.co:6868/euro/api/get_live_url?details_url=' + details_url, function(error, response, body){
 	// 	if(error){
 	// 		console.log(error);
