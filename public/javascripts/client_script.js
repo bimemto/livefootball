@@ -2,7 +2,11 @@ var ua = navigator.userAgent.toLowerCase();
 var isAndroid = ua.indexOf("android") > -1;
 
 function watch(details_url) {
-	var myWindow = window.open("about:blank",'name');
+	if(isAndroid){
+
+	} else {
+		var myWindow = window.open("about:blank",'name');	
+	}
 	$.getJSON(
 		"http://bu.1ly.co:6868/euro/api/get_live_url",
 		{details_url : details_url},
