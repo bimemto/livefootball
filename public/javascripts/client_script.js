@@ -1,10 +1,4 @@
-var win = window.open('');
-    window.oldOpen = window.open;
-    window.open = function(url) { // reassignment function
-        win.location = url;
-        window.open = oldOpen;
-        win.focus();
-    }
+
 
 function watch(details_url) {
 	$.getJSON(
@@ -15,14 +9,15 @@ function watch(details_url) {
 				if(val === ''){
 					alert('Hiện tại chưa có link, mời bạn quay lại sau');
 				} else {
-					window.open(val);
+					var win = window.open(val, 'LiveFootball');
+					win.focus();
 				}
 			});
 		});
 }
 
 function is_mobile(req) {
-    var ua = req.header('user-agent');
-    if (/mobile/i.test(ua)) return true;
-    else return false;
+	var ua = req.header('user-agent');
+	if (/mobile/i.test(ua)) return true;
+	else return false;
 };
