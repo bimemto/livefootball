@@ -5,7 +5,7 @@ function watch(details_url) {
 		"http://bu.1ly.co:6868/euro/api/get_live_url",
 		{details_url : details_url},
 		function(data) {
-			alert('page content: ' + data);
+			alert('page content: ' + data.live_url);
 		}
 	);
 	// request.get('http://bu.1ly.co:6868/euro/api/get_live_url?details_url=' + details_url, function(error, response, body){
