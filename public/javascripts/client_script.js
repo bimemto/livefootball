@@ -9,21 +9,19 @@ function watch(details_url) {
 				if(val === ''){
 					alert('Hiện tại chưa có link, mời bạn quay lại sau');
 				} else {
-					chrome.tabs.create({
-        				url: val
-    				});
+					do_the_ajax_call(val);
 				}
 			});
 		});
 }
 
-function do_the_ajax_call(myPopup, theNewURL){
+function do_the_ajax_call(theNewURL){
 	$.ajax({
 		url: "http://bu.1ly.co",
-		type: "POST",
-		success: function(data){
-			myPopup.location = theNewURL;
-		}
+		success: function(){
+			window.open(theNewURL);
+		},
+		async: false
 	});
 }
 
