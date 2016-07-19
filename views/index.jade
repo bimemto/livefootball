@@ -1,5 +1,25 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+	h1 Today matches
+	-var ob = JSON.parse(json)
+	ol
+		-for(var prop in ob)
+			li
+				p #{ob[prop].team_home} vs #{ob[prop].team_away}
+				br
+				br
+				img(src='#{ob[prop].logo_home}', width="96", height="72")
+				vs
+				img(src='#{ob[prop].logo_away}', width="96", height="72")
+				br
+				br
+				p #{ob[prop].time} - #{ob[prop].league}
+				br
+				br
+				button(onClick=("watch('" + ob[prop].details_url + "')")) Xem
+				br
+				br
+				br
+			
+
