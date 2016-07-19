@@ -1,4 +1,5 @@
-
+var ua = navigator.userAgent.toLowerCase();
+var isAndroid = ua.indexOf("android") > -1;
 
 function watch(details_url) {
 	var myWindow = window.open("about:blank",'name');
@@ -10,20 +11,15 @@ function watch(details_url) {
 				if(val === ''){
 					alert('Hiện tại chưa có link, mời bạn quay lại sau');
 				} else {
-					myWindow.open(val,'name');
+					if(isAndroid){
+						window.location.replace(val);
+					} else {
+						myWindow.open(val,'name');	
+					}
+					
 				}
 			});
 		});
-}
-
-function do_the_ajax_call(theNewURL){
-	$.ajax({
-		url: "http://bu.1ly.co",
-		success: function(){
-			window.open(theNewURL);
-		},
-		async: false
-	});
 }
 
 function is_mobile(req) {
