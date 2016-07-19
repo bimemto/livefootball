@@ -9,11 +9,21 @@ function watch(details_url) {
 				if(val === ''){
 					alert('Hiện tại chưa có link, mời bạn quay lại sau');
 				} else {
-					var win = window.open(val, 'LiveFootball');
-					win.focus();
+					var win = window.open(val, '', '');
+					do_the_ajax_call(win, val);
 				}
 			});
 		});
+}
+
+function do_the_ajax_call(myPopup, theNewURL){
+     $.ajax({
+          url: "http://bu.1ly.co",
+          type: "POST",
+          success: function(data){
+               myPopup.location = theNewURL;
+          }
+     });
 }
 
 function is_mobile(req) {
