@@ -4,7 +4,7 @@ function watch(details_url) {
 		{details_url : details_url},
 		function(data) {
 			$.each(data, function( key, val ) {
-				alert(key + ":" val);
+				alert(key + ":" + val);
 			});
 		});
 }
