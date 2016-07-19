@@ -13,7 +13,7 @@ block content
 			-var ob = JSON.parse(json)
 			ol
 				-for(var prop in ob)
-					tr(class=(ob[prop] % 2 == 0) ? 'odd' : 'even')
+					tr(class=(prop % 2 == 0) ? 'odd' : 'even')
 						td
 							img(src='#{ob[prop].logo_home}', width="96", height="72")
 						td #{ob[prop].time}
@@ -21,9 +21,11 @@ block content
 							img(src='#{ob[prop].logo_away}', width="96", height="72")
 						td(rowspan=2)
 							button(class='button big-btn', onClick=("watch('" + ob[prop].details_url + "')")) Xem
-					tr(class=(ob[prop] % 2 == 0) ? 'odd' : 'even')
-						td #{ob[prop].team_home}
+					tr(class=(prop % 2 == 0) ? 'odd' : 'even')
+						td 
+							b #{ob[prop].team_home}
 						td #{ob[prop].league}
-						td #{ob[prop].team_away}
+						td
+							b #{ob[prop].team_away}
 			
 
