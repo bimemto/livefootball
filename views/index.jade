@@ -20,10 +20,10 @@ block content
 						td
 							img(src='#{ob[prop].logo_away}', width="96", height="72")
 						td(rowspan=2)
-							button(class='button big-btn', onClick=("watch('" + ob[prop].details_url + "' + "," + 1 + ")")) Link 1
-							button(class='button big-btn', onClick=("watch('" + ob[prop].details_url + "' + "," + 2 + ")")) Link 2
-							button(class='button big-btn', onClick=("watch('" + ob[prop].details_url + "' + "," + 3 + ")")) Link 3
-							button(class='button big-btn', onClick=("watch('" + ob[prop].details_url + "' + "," + 4 + ")")) Link 4
+							button(class='button big-btn', onClick=("watch('" + ob[prop].details_url + "',1)")) Link 1
+							button(class='button big-btn', onClick=("watch('" + ob[prop].details_url + "',2)")) Link 2
+							button(class='button big-btn', onClick=("watch('" + ob[prop].details_url + "',3)")) Link 3
+							button(class='button big-btn', onClick=("watch('" + ob[prop].details_url + "',4)")) Link 4
 					tr(class=(prop % 2 == 0) ? 'odd' : 'even')
 						td 
 							b #{ob[prop].team_home}
