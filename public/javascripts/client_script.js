@@ -1,7 +1,7 @@
 var ua = navigator.userAgent.toLowerCase();
 var isAndroid = ua.indexOf("android") > -1;
 
-function watch(details_url) {
+function watch(details_url, server) {
 	if(isAndroid){
 
 	} else {
@@ -9,7 +9,10 @@ function watch(details_url) {
 	}
 	$.getJSON(
 		"http://bu.1ly.co:6868/euro/api/get_live_url",
-		{details_url : details_url},
+		{
+			details_url : details_url,
+			server: server
+		},
 		function(data) {
 			$.each(data, function( key, val ) {
 				if(val === ''){
