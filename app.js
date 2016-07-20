@@ -55,7 +55,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-var server = app.listen(6996,function(){
+var server = app.listen(6868,function(){
 
 })
 
